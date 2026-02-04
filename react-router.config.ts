@@ -1,10 +1,16 @@
+// react-router.config.ts
 import type { Config } from "@react-router/dev/config";
 
 export default {
-  // ✅ route dosyaların burada
+  // senin app klasörün:
   appDirectory: "src/app",
 
-  // ✅ GitHub Pages için SSR/prerender kapat
+  // build çıktın (sende build/ kullanılıyor):
+  buildDirectory: "build",
+
+  // GitHub Pages => SPA
   ssr: false,
-  prerender: false,
+
+  // ✅ en önemli satır:
+  basename: "/maxim-web",
 } satisfies Config;
