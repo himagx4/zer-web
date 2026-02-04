@@ -1,16 +1,12 @@
-// react-router.config.ts
 import type { Config } from "@react-router/dev/config";
 
 export default {
-  // senin app klasörün:
+  // ✅ Senin route klasörün burada:
   appDirectory: "src/app",
 
-  // build çıktın (sende build/ kullanılıyor):
-  buildDirectory: "build",
-
-  // GitHub Pages => SPA
-  ssr: false,
-
-  // ✅ en önemli satır:
+  // ✅ GitHub Pages için doğru kök:
   basename: "/maxim-web",
+
+  // ✅ Pages statik hosting => SSR kapalı:
+  ssr: false,
 } satisfies Config;
