@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: [ "main" ]
   workflow_dispatch:
 
 permissions:
@@ -26,35 +26,33 @@ jobs:
         with:
           bun-version: latest
 
-      - name: Install
-        run: bun install --frozen-lockfile
+      - name: Install deps
+        run: bun install
 
-      - name: Build (React Router)
+      # React Router build (SPA)
+      - name: Build
         run: bunx react-router build
-        env:
-          GITHUB_PAGES: "true"
 
-      - name: Debug output
-        run: |
-          echo "=== ls -la ==="
-          ls -la
-          echo "=== ls -la build ==="
-          ls -la build || true
-          echo "=== ls -la build/client ==="
-          ls -la build/client || true
+      # GitHub Pages SPA refresh fix:
+      # /maxim-web/abc diye girince 404 yemesin diye 404.html -> index.html kopyası
+      - name: SPA 404 fallback
+        run: cp build/client/index.html build/client/404.html
 
-      - name: Upload Pages artifact
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: build/client
 
   deploy:
-    needs: build
     runs-on: ubuntu-latest
+    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
