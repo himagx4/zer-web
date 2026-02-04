@@ -9,45 +9,48 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default defineConfig({
-  // GitHub Pages repo URL: https://himagx4.github.io/maxim-web/
   base: "/maxim-web/",
 
-  // Tailwind/PostCSS için
   css: { transformer: "postcss" },
 
-  // Pages artifact’in aradığı klasör
-  build: { outDir: "dist" },
-
-  plugins: [reactRouter(), tsconfigPaths(), babel()],
+  plugins: [
+    reactRouter(),
+    tsconfigPaths(),
+    babel({
+      // JSX parse/build hatalarını bitirir
+      babelConfig: {
+        presets: [
+          ["@babel/preset-react", { runtime: "automatic" }],
+          "@babel/preset-typescript",
+        ],
+        plugins: [["styled-jsx/babel"]],
+      },
+      filter: /\.[jt]sx?$/,
+    }),
+  ],
 
   resolve: {
     alias: [
-      // ✅ Node-only importu browserda kırılmasın diye shim
-      {
-        find: "node:async_hooks",
-        replacement: path.resolve(__dirname, "./src/shims/async_hooks.ts"),
-      },
-
-      // ✅ React Router template'in aradığı virtual module -> gerçek dosyaya yönlendir
+      // ✅ root.tsx içindeki import: virtual:load-fonts.jsx
       {
         find: "virtual:load-fonts.jsx",
-        replacement: path.resolve(__dirname, "./src/load-fonts.ts"),
+        replacement: path.resolve(__dirname, "src/load-fonts.tsx"),
       },
 
-      // ✅ @auth/create/react içinden SessionProvider bekleniyor (Pages için no-op shim)
-      //    Bu satır regex'ten ÖNCE gelmeli!
+      // ✅ root.tsx içindeki import: @auth/create/react
       {
         find: "@auth/create/react",
-        replacement: path.resolve(__dirname, "./src/shims/auth-create-react.tsx"),
+        replacement: path.resolve(__dirname, "src/shims/auth-create-react.tsx"),
       },
 
-      // ✅ @auth/create ve alt path'leri (örn: @auth/create/xyz) yakalar
+      // ✅ hono -> node:async_hooks browser’da patlamasın
       {
-        find: /^@auth\/create(\/.*)?$/,
-        replacement: path.resolve(__dirname, "./src/__create/@auth/create"),
+        find: "node:async_hooks",
+        replacement: path.resolve(__dirname, "src/shims/async_hooks.ts"),
       },
 
-      { find: "@", replacement: path.resolve(__dirname, "./src") },
+      // ✅ senin @ aliasın
+      { find: "@", replacement: path.resolve(__dirname, "src") },
     ],
   },
 });

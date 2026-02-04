@@ -1,13 +1,13 @@
-// Browser shim for node:async_hooks (GitHub Pages / Vite client build)
-// Enough to satisfy imports like: import { AsyncLocalStorage } from "node:async_hooks"
-
+// Browser build için stub.
+// Hono'nun context-storage middleware'i bunu ister ama Pages'ta çalışmayacak.
+// Build kırılmasın diye minimal stub veriyoruz.
 export class AsyncLocalStorage<T = unknown> {
-  run(_store: T, callback: (...args: any[]) => any, ...args: any[]) {
-    return callback(...args);
-  }
   getStore(): T | undefined {
     return undefined;
   }
-  enterWith(_store: T) {}
-  disable() {}
+  run<R>(_store: T, callback: () => R): R {
+    return callback();
+  }
+  enterWith(_store: T): void {}
+  disable(): void {}
 }
