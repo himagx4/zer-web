@@ -1,7 +1,10 @@
-import type { Config } from '@react-router/dev/config';
+import type { Config } from "@react-router/dev/config";
 
 export default {
-	appDirectory: './src/app',
-	ssr: true,
-	prerender: ['/*?'],
+  // ✅ route dosyaların burada
+  appDirectory: "src/app",
+
+  // ✅ GitHub Pages için SSR/prerender kapat
+  ssr: false,
+  prerender: false,
 } satisfies Config;
