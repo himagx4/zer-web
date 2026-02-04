@@ -35,15 +35,24 @@ import { useSandboxStore } from '../__create/hmr-sandbox-store';
 import type { Route } from './+types/root';
 import { useDevServerHeartbeat } from '../__create/useDevServerHeartbeat';
 
-export const links = () => [];
+export const links = () => [
+  {
+    rel: 'icon',
+    type: 'image/png',
+    href: `${import.meta.env.BASE_URL}favicon.png`,
+  },
+];
 
-if (globalThis.window && globalThis.window !== undefined) {
+
+if (import.meta.env.DEV && globalThis.window && globalThis.window !== undefined) {
   globalThis.window.fetch = fetch;
 }
 
+
 const LoadFontsSSR = import.meta.env.SSR ? LoadFonts : null;
-if (import.meta.hot) {
+if (import.meta.env.DEV && import.meta.hot) {
   import.meta.hot.on('update-font-links', (urls: string[]) => {
+
     // remove old font links
     for (const link of document.querySelectorAll('link[data-auto-font]')) {
       link.remove();
@@ -423,11 +432,14 @@ export const useHandleScreenshotRequest = () => {
   }, []);
 };
 export function Layout({ children }: { children: ReactNode }) {
-  useHandshakeParent();
-  useCodeGen();
-  useRefresh();
-  useHandleScreenshotRequest();
-  useDevServerHeartbeat();
+  if (import.meta.env.DEV) {
+    useHandshakeParent();
+    useCodeGen();
+    useRefresh();
+    useHandleScreenshotRequest();
+    useDevServerHeartbeat();
+  }
+
   const navigate = useNavigate();
   const location = useLocation();
   const pathname = location?.pathname;
@@ -462,12 +474,12 @@ export function Layout({ children }: { children: ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
-        <link rel="icon" href="/src/__create/favicon.png" />
         {LoadFontsSSR ? <LoadFontsSSR /> : null}
       </head>
       <body>
         <ClientOnly loader={() => children} />
-        <HotReloadIndicator />
+                {import.meta.env.DEV ? <HotReloadIndicator /> : null}
+
         <Toaster position="bottom-right" />
         <ScrollRestoration />
         <Scripts />
