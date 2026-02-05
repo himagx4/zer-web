@@ -1,12 +1,12 @@
 import type { Config } from "@react-router/dev/config";
 
 export default {
-  // ✅ Senin route klasörün burada:
+  // ✅ Route klasörün:
   appDirectory: "src/app",
 
-  // ✅ GitHub Pages için doğru kök:
-  basename: "/maxim-web",
+  // ✅ Custom domain (maximgrup.com) kökten yayınlanıyor:
+  basename: "/",
 
-  // ✅ Pages statik hosting => SSR kapalı:
+  // ✅ Statik hosting => SSR kapalı:
   ssr: false,
 } satisfies Config;
