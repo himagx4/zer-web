@@ -47,26 +47,32 @@ export default function MaximLandingPage() {
           {
             title: "Üstün Kalite",
             description: "Tedarik ettiğimiz her ürün titiz bir kalite kontrol sürecinden geçer. Sadece en iyiyi sunuyoruz.",
+            icon: ShieldCheck,
           },
           {
             title: "Güçlü Lojistik",
             description: "Geniş araç filomuz ve optimize edilmiş rotalarımızla ürünlerinizi zamanında ulaştırıyoruz.",
+            icon: Truck,
           },
           {
             title: "Yüksek Stok Kapasitesi",
             description: "Büyük ölçekli depolama alanlarımız sayesinde taleplerinizi bekletmeden, anında karşılıyoruz.",
+            icon: Box,
           },
           {
             title: "Geniş Dağıtım Ağı",
             description: "Ulusal ve uluslararası operasyon yeteneğimizle her türlü ihtiyaca cevap veriyoruz.",
+            icon: Globe,
           },
           {
             title: "7/24 Destek",
             description: "Kurumsal çözüm merkezimiz her türlü sorunuza en kısa sürede yanıt vermektedir.",
+            icon: Headset,
           },
           {
             title: "Hızlı Teslimat",
             description: "İş süreçlerinizi aksatmayacak şekilde en hızlı şekilde teslimat sağlıyoruz.",
+            icon: Zap,
           },
         ],
       },
@@ -121,26 +127,32 @@ export default function MaximLandingPage() {
           {
             title: "Superior Quality",
             description: "Every product we supply goes through a rigorous quality control process. We only offer the best.",
+            icon: ShieldCheck,
           },
           {
             title: "Strong Logistics",
             description: "We deliver your products on time with our wide vehicle fleet and optimized routes.",
+            icon: Truck,
           },
           {
             title: "High Stock Capacity",
             description: "Thanks to our large-scale storage areas, we meet your demands instantly without delay.",
+            icon: Box,
           },
           {
             title: "Wide Distribution Network",
             description: "We respond to all kinds of needs with our national and international operational capability.",
+            icon: Globe,
           },
           {
             title: "24/7 Support",
             description: "Our corporate solution center responds to all your questions in the shortest time.",
+            icon: Headset,
           },
           {
             title: "Fast Delivery",
             description: "We provide delivery as quickly as possible without disrupting your business processes.",
+            icon: Zap,
           },
         ],
       },
@@ -173,15 +185,6 @@ export default function MaximLandingPage() {
   };
 
   const currentContent = content[language as keyof typeof content];
-
-  const features = [
-    { icon: ShieldCheck },
-    { icon: Truck },
-    { icon: Box },
-    { icon: Globe },
-    { icon: Headset },
-    { icon: Zap },
-  ];
 
   const address =
     "Çavuşoğlu Mahallesi Ticarethane Sokak no: 14 Yesilyurt/ malatya";
@@ -374,20 +377,23 @@ export default function MaximLandingPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {currentContent.features.items.map((feature, idx) => (
-              <div
-                key={idx}
-                className="bg-white rounded-[2.5rem] p-10 text-[#003d5b] shadow-xl hover:-translate-y-2 transition-transform duration-300"
-              >
-                <div className="bg-blue-50 w-16 h-16 rounded-2xl flex items-center justify-center mb-8">
-                  <features[idx].icon className="text-[#2563eb]" size={32} />
+            {currentContent.features.items.map((feature, idx) => {
+              const IconComponent = feature.icon;
+              return (
+                <div
+                  key={idx}
+                  className="bg-white rounded-[2.5rem] p-10 text-[#003d5b] shadow-xl hover:-translate-y-2 transition-transform duration-300"
+                >
+                  <div className="bg-blue-50 w-16 h-16 rounded-2xl flex items-center justify-center mb-8">
+                    <IconComponent className="text-[#2563eb]" size={32} />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
+                  <p className="text-[#003d5b]/70 leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
-                <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
-                <p className="text-[#003d5b]/70 leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
