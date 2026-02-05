@@ -9,7 +9,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default defineConfig({
-  base: "/maxim-web/",
+  // ✅ Custom domain (maximgrup.com) için base kök olmalı
+  base: "/",
   css: { transformer: "postcss" },
 
   plugins: [
@@ -36,10 +37,16 @@ export default defineConfig({
   resolve: {
     alias: [
       // ✅ @auth/create/react gelirse local shim’e düşsün
-      { find: "@auth/create/react", replacement: path.resolve(__dirname, "src/shims/auth-create-react.tsx") },
+      {
+        find: "@auth/create/react",
+        replacement: path.resolve(__dirname, "src/shims/auth-create-react.tsx"),
+      },
 
       // ✅ node:async_hooks browser’a gelirse stub’a düşsün
-      { find: "node:async_hooks", replacement: path.resolve(__dirname, "src/shims/async_hooks.ts") },
+      {
+        find: "node:async_hooks",
+        replacement: path.resolve(__dirname, "src/shims/async_hooks.ts"),
+      },
 
       // senin eski aliasların
       {
