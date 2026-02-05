@@ -19,8 +19,6 @@ import {
 export default function MaximLandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const stats = [{ label: "20+ YILLIK GÜVEN", value: "20+" }];
-
   const features = [
     {
       title: "Üstün Kalite",
@@ -64,6 +62,7 @@ export default function MaximLandingPage() {
     "Çavuşoğlu Mahallesi Ticarethane Sokak no: 14 Yesilyurt/ malatya";
   const phoneNumber = "+90 (542) 556 06 22";
   const email = "maxim@maximgrup.com";
+  const googleMapsLink = "https://maps.app.goo.gl/kDTzAJNcNUUG5i738";
 
   // Smooth scroll function
   const scrollToSection = (id: string) => {
@@ -313,7 +312,7 @@ export default function MaximLandingPage() {
                 </a>
 
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=Çavuşoğlu+Mahallesi+Ticarethane+Sokak+no:+14+Yeşilyurt+Malatya"
+                  href={googleMapsLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start space-x-6 group cursor-pointer"
@@ -479,7 +478,7 @@ export default function MaximLandingPage() {
                   <span>{email}</span>
                 </a>
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=Çavuşoğlu+Mahallesi+Ticarethane+Sokak+no:+14+Yeşilyurt+Malatya"
+                  href={googleMapsLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start md:justify-end space-x-3 hover:text-white transition-colors cursor-pointer"
