@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 
 export default defineConfig({
   // ✅ Custom domain (maximgrup.com) için base kök olmalı
-  base: "/",
+  base: "/zer-web/",
   css: { transformer: "postcss" },
 
   plugins: [
