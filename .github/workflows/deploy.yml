@@ -1,7 +1,7 @@
 ﻿name: Deploy to GitHub Pages
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -12,16 +12,22 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '20'
           
       - name: Install dependencies
         run: |
-          rm -rf node_modules
-          npm ci
+          npm config set legacy-peer-deps true
+          npm ci --legacy-peer-deps
           
       - name: Build
-        run: npm run build
-        
+        run: |
+          npm run build
+          
+      - name: Prepare docs folder
+        run: |
+          mkdir -p docs
+          cp -r build/client/* docs/ 2>/dev/null || true
+          
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
