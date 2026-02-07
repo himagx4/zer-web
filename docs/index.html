@@ -1,0 +1,36 @@
+# index.html oluştur
+@"
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZER Grup</title>
+    <link rel="stylesheet" href="assets/root-C2VBp9vx.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        body { 
+            margin: 0; 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+        }
+        #root { min-height: 100vh; }
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-size: 18px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <noscript>JavaScript gereklidir. Lütfen tarayıcınızda JavaScript'i etkinleştirin.</noscript>
+    <div id="root">
+        <div class="loading">ZER Grup Yükleniyor...</div>
+    </div>
+    <script type="module" src="assets/index-CjnEpAL7.js"></script>
+</body>
+</html>
+"@ | Out-File -FilePath docs\index.html -Encoding UTF8
