@@ -1,1 +1,0 @@
-import{a as o}from"./with-props-C0eJ7TCF.js";import{j as n}from"./chunk-D4RADZKF-D37Lt8lI.js";const d=o(function(r){return n.jsxs("div",{style:{padding:24},children:[n.jsx("h1",{children:"404 - Sayfa bulunamadı"}),n.jsx("p",{children:"Aradığınız sayfa mevcut değil."})]})});export{d as default};

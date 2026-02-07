@@ -1,0 +1,1 @@
+import{d as o,j as n}from"./with-props-DEfrcCSA.js";const a=o(function(t){return n.jsxs("div",{style:{padding:24},children:[n.jsx("h1",{children:"404 - Sayfa bulunamadı"}),n.jsx("p",{children:"Aradığınız sayfa mevcut değil."})]})});export{a as default};

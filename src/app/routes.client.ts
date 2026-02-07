@@ -1,22 +1,12 @@
 ﻿import type { RouteObject } from "react-router";
+import React from "react";
 
-// ✅ Browser-safe SPA routes (lazy)
+import Page from "./page";
+import NotFound from "./__create/not-found";
+
 const routes: RouteObject[] = [
-  {
-    path: "/",
-    lazy: async () => {
-      const mod = await import("./page");
-      // page.tsx default export ise Component olarak ver
-      return { Component: mod.default };
-    },
-  },
-  {
-    path: "*",
-    lazy: async () => {
-      const mod = await import("./__create/not-found");
-      return { Component: mod.default };
-    },
-  },
+  { path: "/", element: React.createElement(Page) },
+  { path: "*", element: React.createElement(NotFound) },
 ];
 
 export default routes;
