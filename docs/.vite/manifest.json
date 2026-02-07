@@ -1,0 +1,64 @@
+{
+  "_chunk-D4RADZKF-Bci8xMlf.js": {
+    "file": "assets/chunk-D4RADZKF-Bci8xMlf.js",
+    "name": "chunk-D4RADZKF"
+  },
+  "_index-CjnEpAL7.js": {
+    "file": "assets/index-CjnEpAL7.js",
+    "name": "index",
+    "imports": [
+      "_chunk-D4RADZKF-Bci8xMlf.js"
+    ]
+  },
+  "_with-props-CKEM58dn.js": {
+    "file": "assets/with-props-CKEM58dn.js",
+    "name": "with-props",
+    "imports": [
+      "_chunk-D4RADZKF-Bci8xMlf.js"
+    ]
+  },
+  "node_modules/@react-router/dev/dist/config/defaults/entry.client.tsx": {
+    "file": "assets/entry.client-B4VJ1ah5.js",
+    "name": "entry.client",
+    "src": "node_modules/@react-router/dev/dist/config/defaults/entry.client.tsx",
+    "isEntry": true,
+    "imports": [
+      "_chunk-D4RADZKF-Bci8xMlf.js",
+      "_index-CjnEpAL7.js"
+    ]
+  },
+  "src/app/__create/not-found.tsx?__react-router-build-client-route": {
+    "file": "assets/not-found-XLZGo_lq.js",
+    "name": "not-found",
+    "src": "src/app/__create/not-found.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_with-props-CKEM58dn.js",
+      "_chunk-D4RADZKF-Bci8xMlf.js"
+    ]
+  },
+  "src/app/page.tsx?__react-router-build-client-route": {
+    "file": "assets/page-Cf-NUkhC.js",
+    "name": "page",
+    "src": "src/app/page.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_with-props-CKEM58dn.js",
+      "_chunk-D4RADZKF-Bci8xMlf.js"
+    ]
+  },
+  "src/app/root.tsx?__react-router-build-client-route": {
+    "file": "assets/root-DdGoTMO1.js",
+    "name": "root",
+    "src": "src/app/root.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_with-props-CKEM58dn.js",
+      "_chunk-D4RADZKF-Bci8xMlf.js",
+      "_index-CjnEpAL7.js"
+    ],
+    "css": [
+      "assets/root-C2VBp9vx.css"
+    ]
+  }
+}
