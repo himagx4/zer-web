@@ -1,61 +1,87 @@
 {
-  "_chunk-D4RADZKF-BVK5nzsM.js": {
-    "file": "assets/chunk-D4RADZKF-BVK5nzsM.js",
+  "_chunk-D4RADZKF-D37Lt8lI.js": {
+    "file": "assets/chunk-D4RADZKF-D37Lt8lI.js",
     "name": "chunk-D4RADZKF"
   },
-  "_index-DutOGvMB.js": {
-    "file": "assets/index-DutOGvMB.js",
+  "_index-DgRhieeu.js": {
+    "file": "assets/index-DgRhieeu.js",
     "name": "index",
     "imports": [
-      "_chunk-D4RADZKF-BVK5nzsM.js"
+      "_chunk-D4RADZKF-D37Lt8lI.js"
     ]
   },
-  "_with-props-78-Gbz5e.js": {
-    "file": "assets/with-props-78-Gbz5e.js",
+  "_with-props-C0eJ7TCF.js": {
+    "file": "assets/with-props-C0eJ7TCF.js",
     "name": "with-props",
     "imports": [
-      "_chunk-D4RADZKF-BVK5nzsM.js"
+      "_chunk-D4RADZKF-D37Lt8lI.js"
+    ]
+  },
+  "src/app/__create/not-found.tsx": {
+    "file": "assets/not-found-gRwbPWML.js",
+    "name": "not-found",
+    "src": "src/app/__create/not-found.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_with-props-C0eJ7TCF.js",
+      "_chunk-D4RADZKF-D37Lt8lI.js"
     ]
   },
   "src/app/__create/not-found.tsx?__react-router-build-client-route": {
-    "file": "assets/not-found-BafC9t1s.js",
+    "file": "assets/not-found-DzgLlxyV.js",
     "name": "not-found",
     "src": "src/app/__create/not-found.tsx?__react-router-build-client-route",
     "isEntry": true,
     "imports": [
-      "_with-props-78-Gbz5e.js",
-      "_chunk-D4RADZKF-BVK5nzsM.js"
+      "src/app/__create/not-found.tsx",
+      "_with-props-C0eJ7TCF.js",
+      "_chunk-D4RADZKF-D37Lt8lI.js"
     ]
   },
   "src/app/entry.client.tsx": {
-    "file": "assets/entry.client-QJ8WLRNt.js",
+    "file": "assets/entry.client-Br3q_JZ7.js",
     "name": "entry.client",
     "src": "src/app/entry.client.tsx",
     "isEntry": true,
     "imports": [
-      "_chunk-D4RADZKF-BVK5nzsM.js",
-      "_index-DutOGvMB.js"
+      "_chunk-D4RADZKF-D37Lt8lI.js",
+      "_index-DgRhieeu.js"
+    ],
+    "dynamicImports": [
+      "src/app/page.tsx",
+      "src/app/__create/not-found.tsx"
+    ]
+  },
+  "src/app/page.tsx": {
+    "file": "assets/page-CmhcrPof.js",
+    "name": "page",
+    "src": "src/app/page.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_with-props-C0eJ7TCF.js",
+      "_chunk-D4RADZKF-D37Lt8lI.js"
     ]
   },
   "src/app/page.tsx?__react-router-build-client-route": {
-    "file": "assets/page-BeksSJYT.js",
+    "file": "assets/page-9QwkRriq.js",
     "name": "page",
     "src": "src/app/page.tsx?__react-router-build-client-route",
     "isEntry": true,
     "imports": [
-      "_with-props-78-Gbz5e.js",
-      "_chunk-D4RADZKF-BVK5nzsM.js"
+      "src/app/page.tsx",
+      "_with-props-C0eJ7TCF.js",
+      "_chunk-D4RADZKF-D37Lt8lI.js"
     ]
   },
   "src/app/root.tsx?__react-router-build-client-route": {
-    "file": "assets/root-D4NWfH3W.js",
+    "file": "assets/root-DC1gvIHO.js",
     "name": "root",
     "src": "src/app/root.tsx?__react-router-build-client-route",
     "isEntry": true,
     "imports": [
-      "_with-props-78-Gbz5e.js",
-      "_chunk-D4RADZKF-BVK5nzsM.js",
-      "_index-DutOGvMB.js"
+      "_with-props-C0eJ7TCF.js",
+      "_chunk-D4RADZKF-D37Lt8lI.js",
+      "_index-DgRhieeu.js"
     ],
     "css": [
       "assets/root-C2VBp9vx.css"
