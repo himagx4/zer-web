@@ -20,7 +20,7 @@
     ]
   },
   "src/app/entry.client.tsx": {
-    "file": "assets/entry.client-By5-My5W.js",
+    "file": "assets/entry.client-DLJk8k5u.js",
     "name": "entry.client",
     "src": "src/app/entry.client.tsx",
     "isEntry": true,
@@ -41,7 +41,7 @@
     ]
   },
   "src/app/root.tsx?__react-router-build-client-route": {
-    "file": "assets/root-CWsPjT2-.js",
+    "file": "assets/root-C7xjFHYa.js",
     "name": "root",
     "src": "src/app/root.tsx?__react-router-build-client-route",
     "isEntry": true,
@@ -50,7 +50,7 @@
       "_index-D-HCeGZ4.js"
     ],
     "css": [
-      "assets/root-C2VBp9vx.css"
+      "assets/root-_DkArnwn.css"
     ]
   }
 }
