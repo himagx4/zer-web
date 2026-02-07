@@ -1,4 +1,7 @@
-# index.html oluştur
+# Önce mevcut index.html'i yedekle
+Copy-Item docs/index.html docs/index.html.bak
+
+# YENİ ve DOĞRU index.html oluştur
 @"
 <!DOCTYPE html>
 <html lang="tr">
@@ -7,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZER Grup</title>
     <link rel="stylesheet" href="assets/root-C2VBp9vx.css">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" href="favicon.png">
     <style>
         body { 
             margin: 0; 
@@ -26,11 +29,13 @@
     </style>
 </head>
 <body>
-    <noscript>JavaScript gereklidir. Lütfen tarayıcınızda JavaScript'i etkinleştirin.</noscript>
     <div id="root">
         <div class="loading">ZER Grup Yükleniyor...</div>
     </div>
     <script type="module" src="assets/index-CjnEpAL7.js"></script>
 </body>
 </html>
-"@ | Out-File -FilePath docs\index.html -Encoding UTF8
+"@ | Set-Content docs/index.html -Encoding UTF8
+
+# Kontrol et
+Get-Content docs/index.html | Select -First 5
