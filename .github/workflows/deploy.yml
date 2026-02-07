@@ -1,22 +1,27 @@
-﻿name: Deploy Static Site to GitHub Pages
+﻿name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # ✅ Bu satır ÇOK ÖNEMLİ!
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         
       - name: Deploy Static Site
         run: |
-          # Sadece docs klasörünün var olduğundan emin ol
-          mkdir -p docs
-          echo "✅ Static site deployment"
+          # docs klasörünün olduğundan emin ol
+          if [ ! -d "docs" ]; then
+            mkdir docs
+            echo '<h1>ZER Grup</h1>' > docs/index.html
+          fi
           
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: docs
-          clean: false  # Mevcut dosyaları silme
+          token: ${{ secrets.GITHUB_TOKEN }}  # ✅ Token ekle
+          branch: gh-pages  # ✅ gh-pages branch kullan
