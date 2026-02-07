@@ -1,61 +1,61 @@
 {
-  "_chunk-D4RADZKF-Bci8xMlf.js": {
-    "file": "assets/chunk-D4RADZKF-Bci8xMlf.js",
+  "_chunk-D4RADZKF-BVK5nzsM.js": {
+    "file": "assets/chunk-D4RADZKF-BVK5nzsM.js",
     "name": "chunk-D4RADZKF"
   },
-  "_index-CjnEpAL7.js": {
-    "file": "assets/index-CjnEpAL7.js",
+  "_index-DutOGvMB.js": {
+    "file": "assets/index-DutOGvMB.js",
     "name": "index",
     "imports": [
-      "_chunk-D4RADZKF-Bci8xMlf.js"
+      "_chunk-D4RADZKF-BVK5nzsM.js"
     ]
   },
-  "_with-props-CKEM58dn.js": {
-    "file": "assets/with-props-CKEM58dn.js",
+  "_with-props-78-Gbz5e.js": {
+    "file": "assets/with-props-78-Gbz5e.js",
     "name": "with-props",
     "imports": [
-      "_chunk-D4RADZKF-Bci8xMlf.js"
-    ]
-  },
-  "node_modules/@react-router/dev/dist/config/defaults/entry.client.tsx": {
-    "file": "assets/entry.client-B4VJ1ah5.js",
-    "name": "entry.client",
-    "src": "node_modules/@react-router/dev/dist/config/defaults/entry.client.tsx",
-    "isEntry": true,
-    "imports": [
-      "_chunk-D4RADZKF-Bci8xMlf.js",
-      "_index-CjnEpAL7.js"
+      "_chunk-D4RADZKF-BVK5nzsM.js"
     ]
   },
   "src/app/__create/not-found.tsx?__react-router-build-client-route": {
-    "file": "assets/not-found-XLZGo_lq.js",
+    "file": "assets/not-found-BafC9t1s.js",
     "name": "not-found",
     "src": "src/app/__create/not-found.tsx?__react-router-build-client-route",
     "isEntry": true,
     "imports": [
-      "_with-props-CKEM58dn.js",
-      "_chunk-D4RADZKF-Bci8xMlf.js"
+      "_with-props-78-Gbz5e.js",
+      "_chunk-D4RADZKF-BVK5nzsM.js"
+    ]
+  },
+  "src/app/entry.client.tsx": {
+    "file": "assets/entry.client-QJ8WLRNt.js",
+    "name": "entry.client",
+    "src": "src/app/entry.client.tsx",
+    "isEntry": true,
+    "imports": [
+      "_chunk-D4RADZKF-BVK5nzsM.js",
+      "_index-DutOGvMB.js"
     ]
   },
   "src/app/page.tsx?__react-router-build-client-route": {
-    "file": "assets/page-Cf-NUkhC.js",
+    "file": "assets/page-BeksSJYT.js",
     "name": "page",
     "src": "src/app/page.tsx?__react-router-build-client-route",
     "isEntry": true,
     "imports": [
-      "_with-props-CKEM58dn.js",
-      "_chunk-D4RADZKF-Bci8xMlf.js"
+      "_with-props-78-Gbz5e.js",
+      "_chunk-D4RADZKF-BVK5nzsM.js"
     ]
   },
   "src/app/root.tsx?__react-router-build-client-route": {
-    "file": "assets/root-DdGoTMO1.js",
+    "file": "assets/root-D4NWfH3W.js",
     "name": "root",
     "src": "src/app/root.tsx?__react-router-build-client-route",
     "isEntry": true,
     "imports": [
-      "_with-props-CKEM58dn.js",
-      "_chunk-D4RADZKF-Bci8xMlf.js",
-      "_index-CjnEpAL7.js"
+      "_with-props-78-Gbz5e.js",
+      "_chunk-D4RADZKF-BVK5nzsM.js",
+      "_index-DutOGvMB.js"
     ],
     "css": [
       "assets/root-C2VBp9vx.css"
